@@ -1,7 +1,13 @@
 import random
-
+"""
+JUEGO DEL AHORCADO
+"""
 
 class JuegoAhorcado:
+    """
+    #Esta clase permite gestionar objetos de tipp JuegoAhorcado
+    ---
+    """
     ESTADOS = [
         """
          +--+
@@ -69,13 +75,17 @@ class JuegoAhorcado:
          |  |
         / \ |
         ====="""]
-
+#CATEGORIAS Y OPCIONES
     CATEGORIA = 'FRUTAS VERDURAS PASTA'
     opciones1 = 'PERA PLATANO UVA MANZANA MELOCOTON KIWI ALBARICOQUE CEREZA CIRUELA FRESA GRANADA HIGO LIMA LIMON MANDARINA NARANJA MELON MORA NISPERO PIÑA POMELO SANDIA '.split()
     opciones2 = 'LECHUGA PEPINO ZANAHORIA COL'
     opciones3 = 'ESPAGUETI MACARRONES CARACOLAS'
 
     def jugar(self):
+        """
+        ##Método que donde se elige la categoria y la palabra, devuelve un string cuando has ganado o has perdido
+        :return: string
+        """
 
         lista_introducir = []
         lista_contenido = []
@@ -119,6 +129,13 @@ class JuegoAhorcado:
                     break
 
     def dibujar(self, lista_introducir, lista_contenido, secreto):
+        """
+        ##Método donde se dibuja el muñeco según avance la partida
+        :param lista_introducir: string
+        :param lista_contenido: string
+        :param secreto: string
+        :return:
+        """
         print(self.ESTADOS[len(lista_introducir)])
         print('La categoría es: ', self.CATEGORIA)
         intentos = len(self.ESTADOS)
@@ -144,6 +161,11 @@ class JuegoAhorcado:
         print(' '.join(espacio))
 
     def DIMELETRA(self, repetido):
+        """
+        ##Método el cual pregunta al usuario la letra que quiere introducir
+        :param repetido: string
+        :return:
+        """
 
         while True:
             print('Adivina una letra.')
@@ -158,7 +180,7 @@ class JuegoAhorcado:
             else:
                 return adivina
 
-
+#INCIALIZAMOS LA CLASE
 if __name__ == '__main__':
     juego1 = JuegoAhorcado()
     juego1.jugar()
