@@ -83,6 +83,10 @@ class JuegoAhorcado:
             self.dibujar(lista_introducir, lista_contenido, palabra_secreta)
 
             letra_introducida = self.DIMELETRA(lista_introducir + lista_contenido)
+            if letra_introducir == adivna.append('TERMINA') or letra_introducir == adivina.append('termina'):
+                print(self.ESTADOS[6])
+                print(palabra_secreta)
+                quit()
 
             if letra_introducida in palabra_secreta:
 
@@ -130,6 +134,7 @@ class JuegoAhorcado:
         print(' '.join(espacio))
 
     def DIMELETRA(self, repetido):
+
         while True:
             print('Adivina una letra.')
             adivina = input('> ').upper()
