@@ -70,14 +70,21 @@ class JuegoAhorcado:
         / \ |
         ====="""]
 
-    CATEGORIA = 'FRUTAS'
-    opciones = 'PERA PLATANO UVA MANZANA MELOCOTON KIWI ALBARICOQUE CEREZA CIRUELA FRESA GRANADA HIGO LIMA LIMON MANDARINA NARANJA MELON MORA NISPERO PIÑA POMELO SANDIA '.split()
+    CATEGORIA = 'FRUTAS VERDURAS PASTA'
+    opciones1 = 'PERA PLATANO UVA MANZANA MELOCOTON KIWI ALBARICOQUE CEREZA CIRUELA FRESA GRANADA HIGO LIMA LIMON MANDARINA NARANJA MELON MORA NISPERO PIÑA POMELO SANDIA '.split()
+    opciones2 = 'LECHUGA PEPINO ZANAHORIA COL'
+    opciones3 = 'ESPAGUETI MACARRONES CARACOLAS'
 
     def jugar(self):
 
         lista_introducir = []
         lista_contenido = []
-        palabra_secreta = random.choice(self.opciones)
+        if random.choice(self.CATEGORIA) == 'FRUTAS':
+            palabra_secreta = random.choice(self.opciones1)
+        elif random.choice(self.CATEGORIA) == 'VERDURAS':
+            palabra_secreta = random.choice(self.opciones2)
+        else:
+            palabra_secreta = random.choice(self.opciones3)
 
         while True:
             self.dibujar(lista_introducir, lista_contenido, palabra_secreta)
@@ -117,7 +124,7 @@ class JuegoAhorcado:
 
         print('Letras incorrectas: ')
         for letra in lista_introducir:
-            print(letra,'\n')
+            print(letra, '\n')
         if len(lista_introducir) == 0 and 0 == len(lista_introducir):
             print('No hay letras incorrectas.')
         if len(lista_introducir) == len(lista_introducir) + 1:
