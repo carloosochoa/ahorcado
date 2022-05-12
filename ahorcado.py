@@ -110,10 +110,14 @@ class JuegoAhorcado:
     def dibujar(self, lista_introducir, lista_contenido, secreto):
         print(self.ESTADOS[len(lista_introducir)])
         print('La categoría es: ', self.CATEGORIA)
+        intentos = len(self.ESTADOS)
+        print('Te quendan {} intentos'.format(intentos))
 
         print('Letras incorrectas: ')
+
         for letra in lista_introducir:
             print(letra,'\n')
+
         if len(lista_introducir) == 0 and 0 == len(lista_introducir):
             print('No hay letras incorrectas.')
         if len(lista_introducir) == len(lista_introducir) + 1:
