@@ -96,7 +96,7 @@ class JuegoAhorcado:
                 if ganador:
                     print(self.SALVADO[0])
                     print('¡Bien hecho! la palabra secreta es :', palabra_secreta)
-                    print('Has ganado!')
+                    print('Has ganado,Paco!')
                     break
             else:
                 lista_introducir.append(letra_introducida)
